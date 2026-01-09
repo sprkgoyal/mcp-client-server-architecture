@@ -1,0 +1,2 @@
+rootProject.name = 'mcp-client-server-architecture'
+include 'server'
