@@ -21,36 +21,33 @@ Open `http://localhost:8080`
 
 2. Goto `Clients`
    1. Click `Create Client`
-   2. Give any Client ID, e.g. `mcp-test`
-   3. Click Next
-   4. If you want Client authentication, enable it else skip it
-   5. Select `Direct access grants`
-   6. Click Next
-   7. Write Root URL of you client application, e.g., `http://localhost:6274` for MCP Inspector
-   8. Home URL: `http://localhost:6274/`
-   9. Valid Redirect URIs: `http://localhost:6274/*`
-   10. Web Origins: `http://localhost:6274/*`
-   11. Click Save
+   2. Give any Client ID, e.g. `mcp-test` and click Next
+   3. If you want Client authentication, enable it else skip it
+   4. Select `Direct access grants` and click Next
+   5. Enter
+      1. Root URL of you client application, e.g., `http://localhost:6274` for MCP Inspector
+      2. Home URL: `http://localhost:6274/`
+      3. Valid Redirect URIs: `http://localhost:6274/*`
+      4. Web Origins: `http://localhost:6274/*`
+      5. Click Save
 
 3. Again, goto `Clients`
    1. Click client name which you created, `mcp-test` in my case
    2. Goto `Roles` tab
    3. Click `Create Role`
-   4. Create a role with name `admin_role`
-   5. Click Save
-   6. Create another role with name `user_role`
+   4. Create a role with name `admin_role` and click Save
+   5. Create another role with name `user_role`
 
 4. Again, goto `Clients`
    1. Click `Client Registration` tab
    2. Click `Trusted Hosts`
    3. In Trusted Hosts, add your client host, e.g. `http://localhost:6274`
 
-5. Open `Clinet Scopes`
+5. Open `Client Scopes`
    1. Click `Create Client Scope`
    2. Name the scope `mcp:tools`
    3. Type `Optional`
-   4. Enable `Include in token scope`
-   5. Click Save
+   4. Enable `Include in token scope` and click Save
 
 6. Again open `Client Scopes`
    1. Select your scope
