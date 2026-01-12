@@ -33,7 +33,7 @@ public class McpSecurityConfiguration {
                 .with(
                         McpServerOAuth2Configurer.mcpServerOAuth2(),
                         (mcpAuthorization) -> {
-                            mcpAuthorization.authorizationServer(issuerUrl);
+                            mcpAuthorization.authorizationServer(this.issuerUrl);
                         }
                 )
                 .build();
