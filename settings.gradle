@@ -1,2 +1,4 @@
 rootProject.name = 'mcp-client-server-architecture'
 include 'server'
+include 'client'
+include 'auth'

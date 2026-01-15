@@ -138,7 +138,7 @@ From the left pane
 6. After the connection is established
 7. Goto `Tools` tab
 8. Click `List Tools`
-9. Select the tool annotated with `@PreAuthorise`, e.g. `get_weather` in out case.
+9. Select the tool annotated with `@PreAuthorise`, e.g. `get_weather` in our case.
 10. Set the region with some random value and `Run Tool`
 11. It will return the result.
 

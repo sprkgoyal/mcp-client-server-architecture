@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          default-client:
+            token:
+              access-token-time-to-live: 1h
+            registration:
+              client-id: "mcp-test"
+#              client-secret: "{noop}default-secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+                - "client_credentials"
+              redirect-uris:
+                - "http://127.0.0.1:8080/authorize/oauth2/code/authserver"
+                - "http://localhost:8080/authorize/oauth2/code/authserver"
+                - "http://localhost:6274/oauth/callback"
+                - "https://claude.ai/api/mcp/auth_callback"
+    user:
+      name: admin
+      password: admin
