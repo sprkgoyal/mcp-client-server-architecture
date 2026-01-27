@@ -3,6 +3,7 @@ package spring.ai.mcp.client.controller;
 import io.modelcontextprotocol.client.McpSyncClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
+import org.springframework.ai.tool.ToolCallback;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,7 +32,7 @@ public class BaseController {
     @GetMapping("/api/mcp-list-tools")
     String listMcpTools() {
         SyncMcpToolCallbackProvider mcpToolCallback = SyncMcpToolCallbackProvider.builder().mcpClients(clients).build();
-        return Arrays.stream(mcpToolCallback.getToolCallbacks()).toString();
+        return Arrays.stream(mcpToolCallback.getToolCallbacks()).map(ToolCallback::getToolDefinition).toList().toString();
     }
 
 }

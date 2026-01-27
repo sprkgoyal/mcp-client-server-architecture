@@ -27,8 +27,6 @@ class McpConfiguration {
     McpSyncHttpClientRequestCustomizer requestCustomizer(
             OAuth2AuthorizedClientManager clientManager
     ) {
-        // The clientRegistration name, "authserver",
-        // must match the name in application.properties
         return new OAuth2AuthorizationCodeSyncHttpRequestCustomizer(
                 clientManager,
                 "authserver"
@@ -39,4 +37,5 @@ class McpConfiguration {
     ToolCallbackResolver resolver() {
         return new StaticToolCallbackResolver(List.of());
     }
+
 }
