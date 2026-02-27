@@ -1,0 +1,61 @@
+<svg width="1200" height="840" viewBox="0 0 1200 840" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 32px Arial, sans-serif; fill: #111827; }
+      .lane { font: 700 19px Arial, sans-serif; fill: #111827; }
+      .step { font: 600 16px Arial, sans-serif; fill: #0f172a; }
+      .note { font: 500 15px Arial, sans-serif; fill: #334155; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="840" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="title">End-to-End Request Flow: Keycloak-Secured MCP Tool Call</text>
+
+  <rect x="60" y="90" width="230" height="60" rx="10" fill="#e2e8f0"/>
+  <text x="175" y="128" text-anchor="middle" class="lane">User / MCP Inspector</text>
+
+  <rect x="340" y="90" width="220" height="60" rx="10" fill="#fee2e2"/>
+  <text x="450" y="128" text-anchor="middle" class="lane">Keycloak</text>
+
+  <rect x="610" y="90" width="230" height="60" rx="10" fill="#dcfce7"/>
+  <text x="725" y="128" text-anchor="middle" class="lane">MCP Client</text>
+
+  <rect x="890" y="90" width="250" height="60" rx="10" fill="#dbeafe"/>
+  <text x="1015" y="128" text-anchor="middle" class="lane">MCP Server</text>
+
+  <line x1="175" y1="150" x2="175" y2="760" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7"/>
+  <line x1="450" y1="150" x2="450" y2="760" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7"/>
+  <line x1="725" y1="150" x2="725" y2="760" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7"/>
+  <line x1="1015" y1="150" x2="1015" y2="760" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <line x1="185" y1="210" x2="440" y2="210" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="315" y="198" text-anchor="middle" class="step">1) Request token (password/OAuth2 flow)</text>
+
+  <line x1="460" y1="265" x2="185" y2="265" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="320" y="252" text-anchor="middle" class="step">2) Return JWT (scope: mcp:tools)</text>
+
+  <line x1="185" y1="325" x2="715" y2="325" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="450" y="312" text-anchor="middle" class="step">3) User triggers tool call via client app</text>
+
+  <line x1="735" y1="390" x2="1005" y2="390" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="870" y="377" text-anchor="middle" class="step">4) POST /mcp + Bearer token</text>
+
+  <line x1="1005" y1="455" x2="460" y2="455" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="735" y="442" text-anchor="middle" class="step">5) Validate issuer/signature/claims</text>
+
+  <rect x="845" y="500" width="340" height="95" rx="10" fill="#e0f2fe" stroke="#38bdf8"/>
+  <text x="1015" y="532" text-anchor="middle" class="step">6) Server evaluates</text>
+  <text x="1015" y="558" text-anchor="middle" class="step">@PreAuthorize(hasAuthority('SCOPE_mcp:tools'))</text>
+  <text x="1015" y="580" text-anchor="middle" class="note">per tool method</text>
+
+  <line x1="1005" y1="650" x2="735" y2="650" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="870" y="637" text-anchor="middle" class="step">7) Response: data or access denied</text>
+
+  <line x1="715" y1="710" x2="185" y2="710" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="450" y="697" text-anchor="middle" class="step">8) Final result shown to user</text>
+
+  <text x="600" y="800" text-anchor="middle" class="note">This is the exact journey your Medium article can narrate section-by-section.</text>
+</svg>
